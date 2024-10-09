@@ -1,3 +1,4 @@
+#import "../template.typ": *
 
 = Acknowlegments
 
