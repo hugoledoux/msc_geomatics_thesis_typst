@@ -39,13 +39,18 @@
 #counter(page).update(1)
 #set heading(numbering: "1.")
 
+
 #include "chapters/introduction.typ"
 #include "chapters/relatedwork.typ"
 
 //-- back-matter
 // #set page(numbering: "I")
 // must take page breaks into account, may need to be offset by +1 or -1
-#context counter(page).update(counter(page).at(<front-matter>).first())
+// #context counter(page).update(counter(page).at(<front-matter>).first())
+#set heading(numbering: "A.1")
+#counter(heading).update(0)
+#include "appendices/reproducibility.typ"
+
 #bibliography("/refs.bib", style: "chicago-author-date")
 
 
