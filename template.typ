@@ -1,5 +1,9 @@
 #import "cover/cover_template.typ": cover
+
+//-- subfigure
 #import "@preview/subpar:0.1.1"
+
+//-- admonitions
 #import "@preview/gentle-clues:1.0.0": *
 
 #let msc-geomatics-tudelft(
@@ -30,6 +34,9 @@
   show heading: set text(font: title-font)
   // show heading: set text(font: title-font, fill: primary-color)
   show heading.where(level:1): it => text(font: title-font, 1.3em, it) + v(1.5em)
+
+    // Set link style
+  show link: it => text(fill: rgb("#525455") , it)
 
   // show figure.caption: emph
 

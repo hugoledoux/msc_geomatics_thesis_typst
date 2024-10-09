@@ -7,7 +7,7 @@
 #figure(
   image("../figs/reproducibility_criteria.png"),
   caption: [Reproducibility criteria to be assessed.],
-)<reproducibility_criteria>
+)<fig:reproducibility_criteria>
 
 
 
@@ -17,7 +17,6 @@ Grade/evaluate yourself for the 5 criteria (giving 0/1/2/3 for each):
 + methods
 + computational environment
 + results
-
 
 
 == Self-reflection
