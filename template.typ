@@ -1,5 +1,6 @@
 #import "cover/cover_template.typ": cover
 #import "@preview/subpar:0.1.1"
+#import "@preview/gentle-clues:1.0.0": *
 
 #let msc-geomatics-tudelft(
   title: "",
