@@ -28,8 +28,10 @@
 
   let body-font = "Linux Libertine"
   // let body-font = "Palatino"
-  let title-font = "Source Sans Pro"
-  let math-font = "New Computer Modern Math"
+  let title-font = "Comic Sans MS" //-- the greatest ❤️
+  // let math-font = "New Computer Modern Math"
+  let math-font = "Stix Two Math" //-- free: https://github.com/stipub/stixfonts
+  let mono-font = "Input Mono"
   
   set text(
     font: body-font, 
@@ -52,7 +54,9 @@
     let h1 = counter(heading).get().first()
     numbering("(1.1)", h1, n)
   })
-   
+  
+  //-- raw font
+  show raw: set text(font: mono-font)
 
     // Set link style
   show link: it => text(fill: rgb("#525455") , it)
