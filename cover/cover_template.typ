@@ -12,32 +12,22 @@
   title-font: "",
 ) = {
   set page(
-    margin: (left: 40mm, right: 40mm, top: 25mm, bottom: 25mm),
+    margin: (left: 30mm, right: 30mm, top: 25mm, bottom: 25mm),
     numbering: none,
     number-align: center,
   )
-
-  // let body-font = "New Computer Modern"
-  // let sans-font = "New Computer Modern Sans"
-
-  // set text(
-  //   font: body-font, 
-  //   size: 12pt, 
-  //   lang: "en"
-  // )
   
-  // set par(leading: 1em)
-  // The first page.
+
   page(align(center + horizon)[
     #strong(text(1.2em)[MSc thesis in Geomatics])
     #v(5em, weak: true)
-    #strong(text(font: title-font, 2em,  title))
+    #text(font: title-font, 2em, weight: 600, title)
     #v(3em, weak: true)
     #text(1.7em, author)
     #v(2em, weak: true)
     #text(1.4em, [#graduation-month #graduation-year])
     #v(15em, weak: true)
-    #text(font: title-font, 1.2em, weight: 500, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics])
+    #text(font: title-font, 1.2em, weight: 400, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics])
   ])
 
   pagebreak()
