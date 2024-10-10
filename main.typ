@@ -38,6 +38,11 @@
 )
 
 #outline(
+  title: [List of tables],
+  target: figure.where(kind: table),
+)
+
+#outline(
   title: [List of algorithms],
   target: figure.where(kind: "algorithm"),
 )

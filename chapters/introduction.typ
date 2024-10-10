@@ -176,6 +176,8 @@ All your algorithms will be automatically added to the list of algorithms at the
 
 == Source/raw code 
 
+You can use exactly the same principle as in Markdown, and you can wrap the raw code in a `#figure` to have a caption and place it where you want (see @fig:gml).
+
 #figure(
 ```xml
 <gml:Solid>
@@ -200,6 +202,5 @@ All your algorithms will be automatically added to the list of algorithms at the
 </gml:Solid>
 ```,
 placement: auto,
-
 caption: [Some GML for a `gml:Solid`.],
-), <fig:gml>
+) <fig:gml>

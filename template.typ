@@ -26,9 +26,9 @@
   )
   set par(justify: true)
 
-  let body-font = "Linux Libertine"
-  // let body-font = "Palatino"
-  let title-font = "Comic Sans MS" //-- the greatest ❤️
+  // let body-font = "Linux Libertine"
+  let body-font = "Palatino"
+  let title-font = "Barlow" //-- the greatest ❤️
   // let math-font = "New Computer Modern Math"
   let math-font = "Stix Two Math" //-- free: https://github.com/stipub/stixfonts
   let mono-font = "Input Mono"
@@ -59,7 +59,7 @@
   show raw: set text(font: mono-font)
 
     // Set link style
-  show link: it => text(fill: rgb("#525455") , it)
+  show link: it => text(fill: rgb("#3087b3") , it)
 
    // show figure.caption: emph
   // show figure.caption: it => [
@@ -76,6 +76,9 @@
     author: author,
     graduation-year: graduation-year,
     graduation-month: graduation-month,
+    supervisor1: supervisor1,
+    supervisor2: supervisor2,
+    coreader   : coreader,
     body-font: body-font,
     title-font: title-font,
   )
@@ -86,6 +89,13 @@
   show heading.where(level: 1): it => pagebreak(weak: true, to: "odd") + it
 
   body
+
+  pagebreak() 
+
+  page(align(bottom)[
+    This document was typeset using #link("https://typst.app")[Typst]. The main font is Palatino. 
+    The figures and diagrams were mostly drawn using IPE, PGF/Ti\emph{k}z and Omnigraffle. 
+  ])
 
 }
 
