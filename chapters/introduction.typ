@@ -1,7 +1,5 @@
 #import "../template.typ": *
 
-
-
 = Introduction <chap:intro>
 
 This is a complete template for the MSc Geomatics thesis.
@@ -26,6 +24,8 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 
 
 == Figures <sec:figures>
+
+#info[Typst---very annoyingly!---does not support figures in PDF, only PNG and SVG. You need to convert your PDF to SVG, you can use that: #link("https://cloudconvert.com/pdf-to-svg")]
 
 @fig:sometriangles is a simple figure in PNG format, notice the use of `placement: auto` to put the figure at the best place possible (top or bottom, Typst decides for you).
 
@@ -109,7 +109,7 @@ The union of the Voronoi cells of all generating points $p in S$ form the Vorono
 Tables builtin in Typst are pretty powerful, see #link("https://typst.app/docs/guides/table-guide/").
 If you need some of the features of LaTeX `booktabs`, it seems that tablex is your friend: #link("https://typst.app/universe/package/tablex").
 
-An example of a simple table is in  @tab:example1.
+An example of a simple table is in @tab:example1.
 
 #figure(
   placement: auto,
@@ -128,6 +128,22 @@ An example of a simple table is in  @tab:example1.
     table.hline(),
   ) 
 )<tab:example1>
+
+== Plots
+
+The best way is to use #link("http://matplotlib.org")[matplotlib], or its more beautiful version #link("http://stanford.edu/~mwaskom/software/seaborn/index.html")[seaborn].
+With these, you can use Python to generate nice plots, such as that in @fig:myplot.
+
+#figure(
+  image("../plots/myplot.svg", width:70%),
+  placement: auto, 
+  caption: [A super plot.],
+) <fig:myplot>
+
+In the folder `./plots/`, there is an example of a CSV file of the temperature of Delft, taken somewhere.
+From this CSV, the plot is generated with the script `createplot.py`.
+
+
 
 
 == Pseudo-code <sec:pseudo-code>
