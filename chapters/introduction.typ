@@ -1,5 +1,7 @@
 #import "../template.typ": *
 
+
+
 = Introduction <chap:intro>
 
 This is a complete template for the MSc Geomatics thesis.
@@ -29,9 +31,20 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 
 #figure(
   image("../figs/sometriangles.png", width:60%),
+  // rect(),
   placement: auto, //-- otherwise figures gets placed where it's called
-  caption: [One nice figure.],
-)<fig:sometriangles>
+  caption: flex-caption( [1 nice figure.], [2 nice figure.]),
+  // caption: [1 nice figure.],
+) <fig:sometriangles>
+
+#figure(
+  rect(),
+  // placement: auto,
+  caption: flex-caption(
+    [This is my long caption text in the document.],
+    [This is short],
+  ), 
+) <un>
 
 #info[All figures in your thesis should be referenced to in the main text. The same applies to tables and algorithms.]
 
@@ -52,6 +65,11 @@ You can also refer to a subfigure: see @fig:cat:b.
   ), <fig:cat:c>,
   columns: (1fr, 1fr, 1fr),
   caption: [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours.],
+  // caption: 
+  // flex-caption(
+  //   [Triangulation of a cat.],
+  //   [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours.], 
+  // ),
   placement: auto,
   label: <fig:cat>,
 )
@@ -69,3 +87,77 @@ And #citet(<Delaunay34>) did VoroCrust.
 #cite(<Voronoi08>) \
 #citep(<Voronoi08>) \
 #cite(label("Voronoi08"))
+
+== Footnotes 
+
+Footnotes are a good way to write text that is not essential for the understanding of the text #footnote[but please do not overuse them].
+
+== Equations
+
+Equations and variables can be put inline in the text, but also numbered.
+
+Let $S$ be a set of points in $RR^d$. 
+The Voronoi cell of a point $p in S$, defined $cal(V)_p$, is the set of points $x in RR^d$ that are closer to $p$ than to any other point in $S$; that is:
+
+$ cal(V)_p = \{x in RR^d | \|x-p\|  lt.eq  \|x-q\|,  forall  q in S \}. $
+
+The union of the Voronoi cells of all generating points $p in S$ form the Voronoi diagram of $S$, defined VD($S$).
+
+
+== Pseudo-code <sec:pseudo-code>
+
+Please avoid putting code (Python, C++, Fortran) in your thesis.
+Small excerpt are probably fine (for some cases), but do not put all the code in an appendix.
+Instead, put your code somewhere online (eg GitHub) and put _pseudo-code_ in your thesis.
+The package `lovelace` is pretty handy, see for instance @algo:walk.
+All your algorithms will be automatically added to the list of algorithms at the begining of the thesis.
+
+
+#figure(
+  kind: "algorithm",
+  supplement: [Algorithm],
+  caption: [W#smallcaps([alk]) ($cal(T)$, $tau$, $p$)],
+  pseudocode-list[
+    + *Input:* A Delaunay tetrahedralization $cal(T)$, a starting tetrahedron $tau$, and a query point $p$
+    + *Output:* $tau_r$: the tetrahedron in $cal(T)$ containing $p$
+    + *while* $tau_r$ not found
+      + *for* $i #sym.arrow.l$ 0 *to* 3 *do*
+        + $sigma_i #sym.arrow.l$ get opposite vertex $i$ in $tau$
+        + *if* O#smallcaps([rient]) ($sigma_i, p$) $<0$ *then*
+          + $tau #sym.arrow.l$ get neighbouring tetrahedron of $tau$ incident to $sigma_i$
+          + break
+      + *if* $i==3$ *then*
+        - \//-- all the faces of $tau$ have been tested
+        + *return* $tau_r = tau$
+  ]
+) <algo:walk>
+
+== Source/raw code 
+
+#figure(
+```xml
+<gml:Solid>
+  <gml:exterior>
+    <gml:CompositeSurface>
+      <gml:surfaceMember>
+        <gml:Polygon>
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:pos>0.000000 0.000000 1.000000</gml:pos>
+              <gml:pos>1.000000 0.000000 1.000000</gml:pos>
+              <gml:pos>1.000000 1.000000 1.000000</gml:pos>
+              <gml:pos>0.000000 1.000000 1.000000</gml:pos>
+              <gml:pos>0.000000 0.000000 1.000000</gml:pos>
+            </gml:LinearRing>
+          </gml:exterior>
+          <gml:interior>
+          ...
+      </gml:surfaceMember>
+    </gml:CompositeSurface>
+  </gml:interior>
+</gml:Solid>
+```,
+placement: auto,
+
+caption: [Some GML for a `gml:Solid`.],
+), <fig:gml>

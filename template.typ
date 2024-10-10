@@ -6,6 +6,9 @@
 //-- admonitions
 #import "@preview/gentle-clues:1.0.0": *
 
+//- pseudo-code
+#import "@preview/lovelace:0.3.0": *
+
 #let msc-geomatics-tudelft(
   title: "",
   author: "",
@@ -26,6 +29,7 @@
   let body-font = "Linux Libertine"
   // let body-font = "Palatino"
   let title-font = "Source Sans Pro"
+  let math-font = "New Computer Modern Math"
   
   set text(
     font: body-font, 
@@ -35,11 +39,25 @@
   // show heading: set text(font: title-font, fill: primary-color)
   show heading.where(level:1): it => text(font: title-font, 1.3em, it) + v(1.5em)
 
+  //-- math
+  show math.equation: set text(font: math-font)
+  /// author: laurmaedje
+  // set heading(numbering: "1.")
+  // reset counter at each chapter
+  show heading.where(level:1): it => {
+    counter(math.equation).update(0)
+    it
+  }
+  set math.equation(numbering: n => {
+    let h1 = counter(heading).get().first()
+    numbering("(1.1)", h1, n)
+  })
+   
+
     // Set link style
   show link: it => text(fill: rgb("#525455") , it)
 
-  // show figure.caption: emph
-
+   // show figure.caption: emph
   // show figure.caption: it => [
     // #it.supplement
     // #context it.counter.display(it.numbering) #text(it.body) 
@@ -70,3 +88,22 @@
 //-- natbib
 #let citet= cite.with(form: "prose") 
 #let citep = cite 
+
+//-- for outline of figures
+#let in-outline = state("in-outline", false)
+#show outline: it => {
+  in-outline.update(true)
+  it
+  in-outline.update(false)
+}
+#let flex-caption(long, short) = locate(loc => 
+  if in-outline.at(loc) { short } else { long }
+)
+
+
+//-- default for pseudo-code/lovelace
+#let my-lovelace-defaults = (
+  booktabs: true,
+  booktabs-stroke: 1pt + black,
+)
+#let pseudocode-list = pseudocode-list.with(..my-lovelace-defaults)

@@ -22,13 +22,25 @@
 #include "front/abstract.typ"
 #include "front/acknowledgement.typ"
 
-#show outline.entry.where(
-  level: 1
-): it => {
-  v(12pt, weak: true)
-  strong(it)
-}
-#outline(depth: 2, indent: auto)
+#[
+  #show outline.entry.where(
+    level: 1
+  ): it => {
+    v(12pt, weak: true)
+    strong(it)
+  }
+  #outline(depth: 2, indent: auto)
+]
+
+#outline(
+  title: [List of figures],
+  target: figure.where(kind: image),
+)
+
+#outline(
+  title: [List of algorithms],
+  target: figure.where(kind: "algorithm"),
+)
 
 // page counter anchor
 #metadata(()) <front-matter>
