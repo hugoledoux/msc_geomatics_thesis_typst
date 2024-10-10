@@ -1,3 +1,5 @@
+
+//-- my local cover
 #import "cover/cover_template.typ": cover
 
 //-- subfigure
@@ -6,18 +8,22 @@
 //-- admonitions
 #import "@preview/gentle-clues:1.0.0": *
 
-//- pseudo-code
+//-- pseudo-code
 #import "@preview/lovelace:0.3.0": *
 
 #let msc-geomatics-tudelft(
   title: "",
   author: "",
   advisors: (),
-  graduation-year: 2024,
-  graduation-month: 11,
+  graduation-year: "",
+  graduation-month: "",
   supervisor1: "",
   supervisor2: "",
   coreader   : "",
+  body-font  : "",
+  title-font : "",
+  math-font  : "",
+  mono-font  : "",
   body,
 ) = {
 
@@ -26,7 +32,6 @@
   )
   set par(justify: true)
 
-  // let body-font = "Linux Libertine"
   let body-font = "Palatino" //-- free equivalent is URW Palladio https://fontesk.com/palladio-typeface/
   let title-font = "Source Sans Pro" //-- https://github.com/adobe-fonts/source-sans-pro
   // let math-font = "New Computer Modern Math"

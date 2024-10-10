@@ -1,19 +1,20 @@
 #import "template.typ": *
 
-
-#let mymetadata = toml("metadata.toml")
-
+#let mysettings = toml("settings.toml")
 #show: doc => msc-geomatics-tudelft(
-  title: mymetadata.title,
-  author: mymetadata.author,
-  graduation-year: mymetadata.graduation-year,
-  graduation-month: mymetadata.graduation-month,
-  supervisor1: mymetadata.supervisor1,
-  supervisor2: mymetadata.supervisor2,
-  coreader   : mymetadata.coreader,
+  title: mysettings.title,
+  author: mysettings.author,
+  graduation-year: mysettings.graduation-year,
+  graduation-month: mysettings.graduation-month,
+  supervisor1: mysettings.supervisor1,
+  supervisor2: mysettings.supervisor2,
+  coreader   : mysettings.coreader,
+  body-font  : mysettings.fonts.body-font,
+  title-font : mysettings.fonts.title-font, 
+  math-font  : mysettings.fonts.math-font,
+  mono-font  : mysettings.fonts.mono-font,
   doc,
 )
-
 
 //-- front-matter
 #set page(numbering: "i")
@@ -56,7 +57,6 @@
 #counter(page).update(1)
 #set heading(numbering: "1.")
 
-
 #include "chapters/introduction.typ"
 #include "chapters/relatedwork.typ"
 
@@ -70,6 +70,6 @@
 #include "appendices/someumldia.typ"
 
 //-- references
-#bibliography("/refs.bib", style: "chicago-author-date")
+#bibliography("/refs.bib", style: "apa")
 
 
