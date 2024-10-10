@@ -27,11 +27,11 @@
   set par(justify: true)
 
   // let body-font = "Linux Libertine"
-  let body-font = "Palatino"
-  let title-font = "Barlow" //-- the greatest ❤️
+  let body-font = "Palatino" //-- free equivalent is URW Palladio https://fontesk.com/palladio-typeface/
+  let title-font = "Source Sans Pro" //-- https://github.com/adobe-fonts/source-sans-pro
   // let math-font = "New Computer Modern Math"
   let math-font = "Stix Two Math" //-- free: https://github.com/stipub/stixfonts
-  let mono-font = "Input Mono"
+  let mono-font = "Consolas" 
   
   set text(
     font: body-font, 
