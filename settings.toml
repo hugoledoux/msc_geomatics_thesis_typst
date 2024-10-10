@@ -8,6 +8,7 @@ supervisor1 = "Prof.dr. Jan Smit"
 supervisor2 = "Dr. Gerard Joling"
 coreader    = "ir. Gordon Heuckeroth"
 graduation-group = "3D geoinformation group"
+#graduation-group = "Geo-Database Management Centre"
 
 [fonts]
 body-font = "Palatino"          #-- free equivalent is URW Palladio https://fontesk.com/palladio-typeface/

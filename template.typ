@@ -20,6 +20,7 @@
   supervisor1: "",
   supervisor2: "",
   coreader   : "",
+  graduation-group: "",
   body-font  : "",
   title-font : "",
   math-font  : "",
@@ -84,6 +85,7 @@
     supervisor1: supervisor1,
     supervisor2: supervisor2,
     coreader   : coreader,
+    graduation-group: graduation-group,
     body-font: body-font,
     title-font: title-font,
   )

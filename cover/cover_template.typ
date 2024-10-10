@@ -8,6 +8,7 @@
   supervisor1: "",
   supervisor2: "",
   coreader   : "",
+  graduation-group: "",
   body-font: "",
   title-font: "",
 ) = {
@@ -36,17 +37,23 @@
   page(align(bottom)[
     #author: #emph(title) (#graduation-year)
     #linebreak()
-    #cc-by This work is licensed under a Creative Commons Attribution 4.0 International License. To view a copy of this license, visit #link("http://creativecommons.org/licenses/by/4.0/").
+    #text(0.9em, [#cc-by This work is licensed under a Creative Commons Attribution 4.0 International License. To view a copy of this license, visit #link("http://creativecommons.org/licenses/by/4.0/").])
     #v(7em, weak: true)
     The work in this thesis was carried out in the: 
     #grid(
       columns: (auto, auto),
       align: (bottom, horizon),
       gutter: 5pt,
-      grid.cell(
-        image("../figs/logo_tu3d.svg", width: 50%),
-      ),
-      grid.cell([3D geoinformation group #linebreak() Delft University of Technology])
+      if graduation-group == "3D geoinformation group" [
+        #grid.cell(
+          image("../figs/logo_tu3d.svg", width: 50%),
+        )      
+      ] else [
+        #grid.cell(
+          image("../figs/GDMC-LOGO12.jpg", width: 50%),
+        )
+      ],
+      grid.cell([#graduation-group #linebreak() Delft University of Technology])
     )
     #v(5em, weak: true)
     #grid(
