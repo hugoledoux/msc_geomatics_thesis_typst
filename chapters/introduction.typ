@@ -104,6 +104,32 @@ $ cal(V)_p = \{x in RR^d | \|x-p\|  lt.eq  \|x-q\|,  forall  q in S \}. $
 The union of the Voronoi cells of all generating points $p in S$ form the Voronoi diagram of $S$, defined VD($S$).
 
 
+== Tables <sec:table>
+
+Tables builtin in Typst are pretty powerful, see #link("https://typst.app/docs/guides/table-guide/").
+If you need some of the features of LaTeX `booktabs`, it seems that tablex is your friend: #link("https://typst.app/universe/package/tablex").
+
+An example of a simple table is in  @tab:example1.
+
+#figure(
+  placement: auto,
+  caption: [Details concerning the datasets used for the experiments.],
+  table(
+    stroke: none,
+    columns: 5,
+    align: (left, right, right, right, right),
+    // columns: (auto, auto, auto, auto, auto),
+    table.hline(),
+    table.header[][solids][faces][vertices][constraints],
+    table.hline(),
+    [*campus*],  [370],   [4~298],  [5~970],  [3~976],
+    [*kvz*],     [637],   [6~549], [8~951],  [13~571],
+    [*engelen*], [1~629], [15~870], [23~732], [15~868], 
+    table.hline(),
+  ) 
+)<tab:example1>
+
+
 == Pseudo-code <sec:pseudo-code>
 
 Please avoid putting code (Python, C++, Fortran) in your thesis.
