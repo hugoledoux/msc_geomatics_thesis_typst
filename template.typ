@@ -29,16 +29,15 @@
 ) = {
 
   set page(
-    margin: (left: 25mm, right: 25mm, top: 25mm, bottom: 25mm),
+    margin: auto,
+    // margin: (left: 25mm, right: 25mm, top: 40mm, bottom: 30mm),
   )
   set par(justify: true)
 
-  let body-font = "Palatino" //-- free equivalent is URW Palladio https://fontesk.com/palladio-typeface/
-  let title-font = "Source Sans Pro" //-- https://github.com/adobe-fonts/source-sans-pro
-  // let math-font = "New Computer Modern Math"
-  let math-font = "Stix Two Math" //-- free: https://github.com/stipub/stixfonts
-  let mono-font = "Consolas" 
-  
+  let body-font = body-font
+  let title-font = title-font
+  let math-font = math-font
+  let mono-font = mono-font
   set text(
     font: body-font, 
     size: 11pt, 
