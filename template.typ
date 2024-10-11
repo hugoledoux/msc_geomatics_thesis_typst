@@ -11,6 +11,9 @@
 //-- pseudo-code
 #import "@preview/lovelace:0.3.0": *
 
+//-- for the fancy headers
+#import "@preview/hydra:0.5.1": hydra
+
 #let msc-geomatics-tudelft(
   title: "",
   author: "",
