@@ -1,6 +1,6 @@
 #import "../template.typ": *
 
-= Abstract
+#heading(outlined: false)[Abstract]
 
 #info[ Should fit on one page. ]
 

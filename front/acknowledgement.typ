@@ -1,6 +1,6 @@
 #import "../template.typ": *
 
-= Acknowlegments
+#heading(outlined: false)[Acknowledgements]
 
 Thanks to everyone, especially to my supervisors and my dog (in that order). 
 And obviously to the ones who made that great template.
