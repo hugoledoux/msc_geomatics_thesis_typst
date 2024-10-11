@@ -13,13 +13,14 @@
   title-font: "",
 ) = {
   set page(
-    margin: (left: 30mm, right: 30mm, top: 25mm, bottom: 25mm),
+    margin: auto,
+    // margin: (left: 30mm, right: 30mm, top: 130mm, bottom: 30mm),
     numbering: none,
     number-align: center,
   )
   
 
-  page(align(center + horizon)[
+  align(center + horizon)[
     #strong(text(1.2em)[MSc thesis in Geomatics])
     #v(5em, weak: true)
     #text(font: title-font, 2em, weight: 600, title)
@@ -29,12 +30,12 @@
     #text(1.4em, [#graduation-month #graduation-year])
     #v(15em, weak: true)
     #text(font: title-font, 1.2em, weight: 400, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics])
-  ])
+  ]
 
   pagebreak()
   
   // --- Cover ---
-  page(align(bottom)[
+  align(bottom)[
     #author: #emph(title) (#graduation-year)
     #linebreak()
     #text(0.9em, [#cc-by This work is licensed under a Creative Commons Attribution 4.0 International License. To view a copy of this license, visit #link("http://creativecommons.org/licenses/by/4.0/").])
@@ -65,5 +66,5 @@
       [Co-reader:],
       [#coreader],
     )
-  ])
+  ]
 }

@@ -99,10 +99,10 @@
 
   pagebreak() 
 
-  page(align(bottom)[
+  align(bottom)[
     This document was typeset using #link("https://typst.app")[Typst]. The main font is Palatino. 
     The figures and diagrams were mostly drawn using IPE, PGF/Ti\emph{k}z and Omnigraffle. 
-  ])
+  ]
 
 }
 

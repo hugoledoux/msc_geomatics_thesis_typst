@@ -18,7 +18,16 @@
 )
 
 //-- front-matter
-#set page(numbering: "i")
+#set page(
+  numbering: "i",
+  footer: locate(
+    loc => if calc.even(loc.page()) {
+      align(left, counter(page).display("i"));
+    } else {
+      align(right, counter(page).display("i"));
+    }
+  )
+)
 #counter(page).update(1)
 
 #include "front/abstract.typ"
@@ -54,7 +63,24 @@
 #pagebreak()
 
 //-- main-matter
-#set page(numbering: "1")
+#set page(
+  numbering: "1",
+  header: context {
+    if calc.odd(here().page()) {
+      align(right, emph(hydra(1)))
+    } else {
+      align(left, emph(hydra(2)))
+    }
+    // line(length: 100%)
+  }, 
+  footer: locate(
+    loc => if calc.even(loc.page()) {
+      align(left, counter(page).display("1"));
+    } else {
+      align(right, counter(page).display("1"));
+    }
+  )
+)
 #counter(page).update(1)
 #set heading(numbering: "1.")
 
