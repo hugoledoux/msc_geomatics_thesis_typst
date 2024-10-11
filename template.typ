@@ -67,16 +67,26 @@
     // Set link style
   show link: it => text(fill: rgb("#3087b3") , it)
 
-   // show figure.caption: emph
-  // show figure.caption: it => [
-    // #it.supplement
-    // #context it.counter.display(it.numbering) #text(it.body) 
+  // set page(footer: locate(
+  //   loc => if calc.even(loc.page()) {
+  //     align(right, counter(page).display("1"));
+  //   } else {
+  //     align(left, counter(page).display("1"));
+  //   }
+  // ))
+  
+  // show figure.caption: emph
+  show figure.caption: it => [
+    #text(font: title-font)[
+      #it.supplement
+      #context it.counter.display(it.numbering): 
+      #it.body
+    ]
     // #context it.counter.display(it.numbering)
-  // ]
+  ]
 
   
   //-- cover pages
-  // align(center)[#text(title)]
   cover(
     title: title,
     author: author,
