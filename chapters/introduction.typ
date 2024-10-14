@@ -83,10 +83,10 @@ And #citet(<Delaunay34>) did VoroCrust.
 // We know from #cite(<Hawker22>, form: "prose") that this can done, and others have done that too #cite(<Esch22>, form: "year").
 
 // All the same
-@Voronoi08 \
-#cite(<Voronoi08>) \
-#citep(<Voronoi08>) \
-#cite(label("Voronoi08"))
++ @Voronoi08 \
++ #cite(<Voronoi08>) \
++ #citep(<Voronoi08>) \
++ #cite(label("Voronoi08"))
 
 == Footnotes 
 
@@ -204,3 +204,17 @@ You can use exactly the same principle as in Markdown, and you can wrap the raw 
 placement: auto,
 caption: [Some GML for a `gml:Solid`.],
 ) <fig:gml>
+
+== TODOs
+
+At P4 or for earlier drafts, it might be good to let the readers know that some part need more work.
+Or that a figure will be added.
+
+The package #link("https://typst.app/universe/package/dashy-todo/") is perfect for this.
+#todo[make sure that the URL is correct :J]
+
+#todo[adding holders for figures is also possible]
+
+A summary of all TODOs in the thesis can even be generated:
+
+#outline(title: "TODOs", target: figure.where(kind: "todo"))

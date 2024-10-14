@@ -4,15 +4,15 @@
 
 //-- subfigure
 #import "@preview/subpar:0.1.1"
-
 //-- admonitions
 #import "@preview/gentle-clues:1.0.0": *
-
 //-- pseudo-code
 #import "@preview/lovelace:0.3.0": *
-
 //-- for the fancy headers
 #import "@preview/hydra:0.5.1": hydra
+//-- TODO
+#import "@preview/dashy-todo:0.0.1": todo
+
 
 #let msc-geomatics-tudelft(
   title: "",
@@ -67,6 +67,9 @@
 
     // Set link style
   show link: it => text(fill: rgb("#3087b3") , it)
+
+  set list(indent: 1em)
+  set enum(indent: 1em)
 
   // set page(footer: locate(
   //   loc => if calc.even(loc.page()) {
