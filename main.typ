@@ -10,10 +10,6 @@
   supervisor2: mysettings.supervisor2,
   coreader   : mysettings.coreader,
   graduation-group: mysettings.graduation-group,
-  body-font  : mysettings.fonts.body-font,
-  title-font : mysettings.fonts.title-font, 
-  math-font  : mysettings.fonts.math-font,
-  mono-font  : mysettings.fonts.mono-font,
   doc,
 )
 

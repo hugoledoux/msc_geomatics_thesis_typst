@@ -9,8 +9,8 @@
   supervisor2: "",
   coreader   : "",
   graduation-group: "",
-  body-font: "",
-  title-font: "",
+  serif-fonts: "",
+  sans-fonts: "",
 ) = {
   set page(
     margin: auto,
@@ -23,13 +23,13 @@
   align(center + horizon)[
     #strong(text(1.2em)[MSc thesis in Geomatics])
     #v(5em, weak: true)
-    #text(font: title-font, 2em, weight: 600, title)
+    #text(font: sans-fonts, 2em, weight: 600, title)
     #v(3em, weak: true)
     #text(1.7em, author)
     #v(2em, weak: true)
     #text(1.4em, [#graduation-month #graduation-year])
     #v(15em, weak: true)
-    #text(font: title-font, 1.2em, weight: 400, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics])
+    #text(font: sans-fonts, 1.2em, weight: 400, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics])
   ]
 
   pagebreak()

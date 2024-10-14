@@ -1,5 +1,4 @@
 
-
 author = "Céline Dion"
 title = "The optimal Delaunay triangulation of cheesy songs"
 graduation-year = 2024
@@ -10,8 +9,3 @@ coreader    = "ir. Gordon Heuckeroth"
 graduation-group = "3D geoinformation group"
 #graduation-group = "Geo-Database Management Centre"
 
-[fonts]
-body-font = "Palatino"          #-- free equivalent is URW Palladio https://fontesk.com/palladio-typeface/
-title-font = "Source Sans Pro"  #--https://github.com/adobe-fonts/source-sans-pro
-math-font = "Stix Two Math"     #-- free: https://github.com/stipub/stixfonts
-mono-font = "Consolas"

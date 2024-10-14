@@ -24,10 +24,6 @@
   supervisor2: "",
   coreader   : "",
   graduation-group: "",
-  body-font  : "",
-  title-font : "",
-  math-font  : "",
-  mono-font  : "",
   body,
 ) = {
 
@@ -37,17 +33,20 @@
   )
   set par(justify: true)
 
-  let body-font = body-font
-  let title-font = title-font
-  let math-font = math-font
-  let mono-font = mono-font
+  
+  let serif-fonts = ("TeX Gyre Pagella", "Palatino", "New CM") //-- https://www.1001fonts.com/tex-gyre-pagella-font.html
+  let sans-fonts = ("TeX Gyre Heros", "Source Sans Pro", "Calibri")  //-- https://www.1001fonts.com/texgyreheros-font.html + https://github.com/adobe-fonts/source-sans-pro
+  let math-font = ("Stix Two Math", "New CM Math")     //-- free: https://github.com/stipub/stixfonts
+  let mono-font = ("Consolas")
+
+
   set text(
-    font: body-font, 
+    font: serif-fonts, 
     size: 11pt, 
   )
-  show heading: set text(font: title-font)
+  show heading: set text(font: sans-fonts)
   // show heading: set text(font: title-font, fill: primary-color)
-  show heading.where(level:1): it => text(font: title-font, 1.3em, it) + v(1.5em)
+  show heading.where(level:1): it => text(font: sans-fonts, 1.3em, it) + v(1.5em)
 
   //-- math
   show math.equation: set text(font: math-font)
@@ -79,13 +78,14 @@
   
   // show figure.caption: emph
   show figure.caption: it => [
-    #text(font: title-font)[
+    #text(font: sans-fonts)[
       #it.supplement
-      #context it.counter.display(it.numbering): 
+      #context it.counter.display(it.numbering). #h(0.3em) 
       #it.body
     ]
-    // #context it.counter.display(it.numbering)
   ]
+
+  // show figure: set figure.caption(separator: [.#h(0.5em)])
 
   
   //-- cover pages
@@ -98,8 +98,8 @@
     supervisor2: supervisor2,
     coreader   : coreader,
     graduation-group: graduation-group,
-    body-font: body-font,
-    title-font: title-font,
+    serif-fonts: serif-fonts,
+    sans-fonts: sans-fonts,
   )
 
 
