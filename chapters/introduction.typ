@@ -205,6 +205,10 @@ placement: auto,
 caption: [Some GML for a `gml:Solid`.],
 ) <fig:gml>
 
+== And finally what matters the most: emojis!
+
+#emoji.face.smile #emoji.rocket #emoji.spaghetti
+
 == TODOs
 
 At P4 or for earlier drafts, it might be good to let the readers know that some part need more work.
