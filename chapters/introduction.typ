@@ -41,8 +41,8 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
   rect(),
   // placement: auto,
   caption: flex-caption(
-    [This is my long caption text in the document.],
     [This is short],
+    [This is my long caption text in the document.],
   ), 
 ) <un>
 

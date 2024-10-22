@@ -16,13 +16,13 @@
 //-- front-matter
 #set page(
   numbering: "i",
-  footer: locate(
-    loc => if calc.even(loc.page()) {
+  footer: context {
+    if calc.even(here().page()) {
       align(left, counter(page).display("i"));
     } else {
       align(right, counter(page).display("i"));
     }
-  )
+  }
 )
 #counter(page).update(1)
 
@@ -69,13 +69,13 @@
     }
     // line(length: 100%)
   }, 
-  footer: locate(
-    loc => if calc.even(loc.page()) {
+  footer: context {
+    if calc.even(here().page()) {
       align(left, counter(page).display("1"));
     } else {
       align(right, counter(page).display("1"));
     }
-  )
+  }
 )
 #counter(page).update(1)
 #set heading(numbering: "1.")
