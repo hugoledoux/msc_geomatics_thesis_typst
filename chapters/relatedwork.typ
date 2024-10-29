@@ -9,6 +9,12 @@ Lemongrass frosted gingerbread bites banana bread orange crumbled lentils sweet 
 
 == Some new section
 
+#figure(
+  image("../figs/sometriangles.png", width:40%),
+  // placement: auto, //-- otherwise figures gets placed where it's called
+  caption: "A triangulation",
+) <fig:sometriangles2>
+
 #lorem(400)
 
 #lorem(400)

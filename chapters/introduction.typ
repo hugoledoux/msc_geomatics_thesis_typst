@@ -39,7 +39,7 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 
 #figure(
   rect(),
-  // placement: auto,
+  placement: auto,
   caption: flex-caption(
     [This is short],
     [This is my long caption text in the document.],
