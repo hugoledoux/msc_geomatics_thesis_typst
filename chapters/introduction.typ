@@ -33,7 +33,7 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
   image("../figs/sometriangles.png", width:60%),
   // rect(),
   placement: auto, //-- otherwise figures gets placed where it's called
-  caption: flex-caption( [1 nice figure.], [2 nice figure.]),
+  caption: flex-caption( [1 nice figure.], [Two nice figure.]),
   // caption: [1 nice figure.],
 ) <fig:sometriangles>
 
