@@ -13,6 +13,36 @@
 //-- TODO
 #import "@preview/dashy-todo:0.0.1": todo
 
+//-- natbib
+#let citet= cite.with(form: "prose") 
+#let citep = cite 
+
+//-- for outline of figures
+// -- TODO: DOESN'T WORK FOR SHORT FIGURE TITLES
+#let in-outline = state("in-outline", false)
+#show outline: it => {
+  in-outline.update(true)
+  it
+  in-outline.update(false)
+}
+#let flex-caption(long, short) = context {   
+  if in-outline.at(here()) { long } else { short }
+}
+
+//-- https://github.com/tingerrr/subpar/issues/16
+#let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
+#let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
+#let subpar-grid = grid.with(
+  numbering: figure-numbering,
+  numbering-sub-ref: sub-figure-numbering,
+)
+
+//-- default for pseudo-code/lovelace
+#let my-lovelace-defaults = (
+  booktabs: true,
+  booktabs-stroke: 1pt + black,
+)
+#let pseudocode-list = pseudocode-list.with(..my-lovelace-defaults)
 
 #let msc-geomatics-tudelft(
   title: "",
@@ -45,8 +75,10 @@
     size: 11pt, 
   )
   show heading: set text(font: sans-fonts)
-  // show heading: set text(font: title-font, fill: primary-color)
-  show heading.where(level:1): it => text(font: sans-fonts, 1.3em, it) + v(1.5em)
+  show heading.where(level: 1): it => counter(figure.where(kind: image)).update(0) + it
+  show heading.where(level:1): it => text(font: sans-fonts, 1.5em, it) + v(2em)
+  show heading.where(level: 1): it => pagebreak(weak: true, to: "odd") + it
+  show figure.where(kind: image): set figure(numbering: figure-numbering)
 
   //-- math
   show math.equation: set text(font: math-font)
@@ -88,11 +120,7 @@
   //   ]
   // ]
 
-  
-
-  // show figure: set figure.caption(separator: [.#h(0.5em)])
-
-  
+ 
   //-- cover pages
   cover(
     title: title,
@@ -107,16 +135,6 @@
     sans-fonts: sans-fonts,
   )
 
-
-// #show math.equation: set text(weight: 400)
-
-  show heading.where(level: 1): it => {
-    pagebreak(weak: true, to: "odd") + it
-    counter(figure.where(kind: image)).update(0) + it
-  }
-  set heading(numbering: "1.1")
-  show heading.where(level: 1): it => counter(figure.where(kind: image)).update(0) + it
-  show figure.where(kind: image): set figure(numbering: figure-numbering)
   body
 
   pagebreak() 
@@ -128,33 +146,3 @@
 
 }
 
-//-- natbib
-#let citet= cite.with(form: "prose") 
-#let citep = cite 
-
-//-- for outline of figures
-// -- TODO: DOESN'T WORK FOR SHORT FIGURE TITLES
-#let in-outline = state("in-outline", false)
-#show outline: it => {
-  in-outline.update(true)
-  it
-  in-outline.update(false)
-}
-#let flex-caption(long, short) = context {   
-  if in-outline.at(here()) { long } else { short }
-}
-
-#let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
-#let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
-
-#let subpar-grid = grid.with(
-  numbering: figure-numbering,
-  numbering-sub-ref: sub-figure-numbering,
-)
-
-//-- default for pseudo-code/lovelace
-#let my-lovelace-defaults = (
-  booktabs: true,
-  booktabs-stroke: 1pt + black,
-)
-#let pseudocode-list = pseudocode-list.with(..my-lovelace-defaults)

@@ -88,6 +88,9 @@
 // #context counter(page).update(counter(page).at(<front-matter>).first())
 #set heading(numbering: "A.1")
 #counter(heading).update(0)
+#let sub-figure-numbering = (super, sub) => numbering("A.1a", counter(heading).get().first(), super, sub)
+#let figure-numbering = super => numbering("A.1", counter(heading).get().first(), super)
+#show figure.where(kind: image): set figure(numbering: figure-numbering)
 
 #include "appendices/reproducibility.typ"
 #include "appendices/someumldia.typ"
