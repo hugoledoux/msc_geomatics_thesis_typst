@@ -3,7 +3,7 @@
 #import "cover/cover_template.typ": cover
 
 //-- subfigure
-#import "@preview/subpar:0.1.1"
+#import "@preview/subpar:0.1.1": *
 //-- admonitions
 #import "@preview/gentle-clues:1.0.0": *
 //-- pseudo-code
@@ -80,13 +80,15 @@
   // ))
   
   // show figure.caption: emph
-  show figure.caption: it => [
-    #text(font: sans-fonts)[
-      #it.supplement
-      #context it.counter.display(it.numbering). #h(0.3em) 
-      #it.body
-    ]
-  ]
+  // show figure.caption: it => [
+  //   #text(font: sans-fonts)[
+  //     #it.supplement
+  //     #context it.counter.display(it.numbering). #h(0.3em) 
+  //     #it.body
+  //   ]
+  // ]
+
+  
 
   // show figure: set figure.caption(separator: [.#h(0.5em)])
 
@@ -108,8 +110,13 @@
 
 // #show math.equation: set text(weight: 400)
 
-  show heading.where(level: 1): it => pagebreak(weak: true, to: "odd") + it
-
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true, to: "odd") + it
+    counter(figure.where(kind: image)).update(0) + it
+  }
+  set heading(numbering: "1.1")
+  show heading.where(level: 1): it => counter(figure.where(kind: image)).update(0) + it
+  show figure.where(kind: image): set figure(numbering: figure-numbering)
   body
 
   pagebreak() 
@@ -137,6 +144,13 @@
   if in-outline.at(here()) { long } else { short }
 }
 
+#let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
+#let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
+
+#let subpar-grid = grid.with(
+  numbering: figure-numbering,
+  numbering-sub-ref: sub-figure-numbering,
+)
 
 //-- default for pseudo-code/lovelace
 #let my-lovelace-defaults = (

@@ -50,7 +50,7 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 
 As shown in @fig:cat, it is possible to have two figures (or more) side by side.
 You can also refer to a subfigure: see @fig:cat:b.
-#subpar.grid(
+#subpar-grid(
   figure(
     image("../figs/tricat-1.svg"), 
     caption: [],
