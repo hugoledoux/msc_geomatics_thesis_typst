@@ -64,9 +64,9 @@
   set par(justify: true)
 
   
-  let serif-fonts = ("TeX Gyre Pagella", "Palatino", "New CM") //-- https://www.1001fonts.com/tex-gyre-pagella-font.html
+  let serif-fonts = ("TeX Gyre Pagella", "Palatino", "New Computer Modern") //-- https://www.1001fonts.com/tex-gyre-pagella-font.html
   let sans-fonts = ("TeX Gyre Heros", "Source Sans Pro", "Calibri")  //-- https://www.1001fonts.com/texgyreheros-font.html + https://github.com/adobe-fonts/source-sans-pro
-  let math-font = ("Stix Two Math", "New CM Math")     //-- free: https://github.com/stipub/stixfonts
+  let math-font = ("Stix Two Math", "New Computer Modern Math")     //-- free: https://github.com/stipub/stixfonts
   let mono-font = ("Consolas")
 
 
