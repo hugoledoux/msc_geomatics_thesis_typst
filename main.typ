@@ -39,10 +39,14 @@
   #outline(depth: 2, indent: auto)
 ]
 
-#outline(
-  title: [List of figures],
-  target: figure.where(kind: image),
-)
+#{
+  show outline: it => {
+    [#in-outline.update(true)]
+    it
+    [#in-outline.update(false)]
+  }
+  outline(title: [List of figures], target: figure.where(kind: image))
+}
 
 #outline(
   title: [List of tables],

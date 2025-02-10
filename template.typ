@@ -3,7 +3,7 @@
 #import "cover/cover_template.typ": cover
 
 //-- subfigure
-#import "@preview/subpar:0.1.1": *
+#import "@preview/subpar:0.2.0"
 //-- admonitions
 #import "@preview/gentle-clues:1.0.0": *
 //-- pseudo-code
@@ -29,10 +29,12 @@
   if in-outline.at(here()) { long } else { short }
 }
 
+
+
 //-- https://github.com/tingerrr/subpar/issues/16
 #let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
 #let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
-#let subpar-grid = grid.with(
+#let subpar-grid = subpar.grid.with(
   numbering: figure-numbering,
   numbering-sub-ref: sub-figure-numbering,
 )
