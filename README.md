@@ -29,6 +29,8 @@ To modify this template:
 1. put your details in `settings.toml`
 2. `typst compile main.typ`
 
+If you're used to LaTeX, see the handy [Guide for LaTeX users](https://typst.app/docs/guides/guide-for-latex-users/).
+
 
 ## Which software to use?
 
