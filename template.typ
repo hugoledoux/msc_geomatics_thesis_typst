@@ -18,7 +18,6 @@
 #let citep = cite 
 
 //-- for outline of figures
-// -- TODO: DOESN'T WORK FOR SHORT FIGURE TITLES
 #let in-outline = state("in-outline", false)
 #show outline: it => {
   in-outline.update(true)

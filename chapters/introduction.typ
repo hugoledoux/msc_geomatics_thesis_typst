@@ -34,14 +34,13 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
   // rect(),
   placement: auto, //-- otherwise figures gets placed where it's called
   caption: flex-caption( [1 nice figure.], [Two nice figure.]),
-  // caption: [1 nice figure.],
 ) <fig:sometriangles>
 
 #figure(
   rect(),
   placement: auto,
   caption: flex-caption(
-    [This is short],
+    [This is short.],
     [This is my long caption text in the document.],
   ), 
 ) <un>
@@ -49,7 +48,7 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 #info[All figures in your thesis should be referenced to in the main text. The same applies to tables and algorithms.]
 
 As shown in @fig:cat, it is possible to have two figures (or more) side by side.
-You can also refer to a subfigure: see @fig:cat:b.
+You can also refer to a _subfigure_: see @fig:cat:b.
 #subpar-grid(
   figure(
     image("../figs/tricat-1.svg"), 
@@ -64,15 +63,15 @@ You can also refer to a subfigure: see @fig:cat:b.
     caption: [],
   ), <fig:cat:c>,
   columns: (1fr, 1fr, 1fr),
-  caption: [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours.],
-  // caption: 
-  // flex-caption(
-  //   [Triangulation of a cat.],
-  //   [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours.], 
-  // ),
+  caption: 
+  flex-caption(
+    [Triangulation of a cat.],
+    [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours.], 
+  ),
   placement: auto,
   label: <fig:cat>,
 )
+
 
 == References
 
