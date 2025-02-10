@@ -14,14 +14,15 @@ But we hope it will encourage everyone to use Typst or LaTeX for writing their t
 
 ## What is Typst?
 
-It's the "new LaTeX": simpler to learn, simpler to modify the layout, 94232334X faster.
-But also, at the moment, has less features, can be a bit buggy, the basecode is changing often, etc. 
+It's the "new LaTeX": simpler to learn, simpler to modify the layout, 9423.6X faster.
+But also, at the moment, has less features, can be a bit buggy, the basecode changes often (which can break some functions), etc. 
 
 So great to use, but be warned.
 
+
 ## How to use this template?
 
-The file `chapters/introduction.typ` contains several tips that are useful when using LaTeX, read its source code!
+The file `chapters/introduction.typ` contains several tips that are useful when using Typst, read its source code!
 
 To modify this template:
 
@@ -33,20 +34,34 @@ To modify this template:
 
 ### Editors
 
-* [VSCode](https://code.visualstudio.com/) + [Tinymist extension](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) (offers OTF preview/rendering)
-* [Typst.app](https://typst.app/) but not all fonts are present
+If you want to work locally, then we strongly encourage you to use:
+
+* [VSCode](https://code.visualstudio.com/)
+* with the [Tinymist extension](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) (which offers realt-ime preview/rendering)
 
 ![](./figs/vscode.png)
 
+The web-application is free, the rending in realtime works great, and it has collaboration tools integrated. The only potential drawback is that not all fonts are present
+
+* [Typst.app](https://typst.app/) 
+
+
 ### Managing references
+
+BibTeX can be used, this is a good cross-platform one:
 
 * [JabRef](http://jabref.sourceforge.net) (cross-platform)
 
+
 ### Drawing figures
 
+The main drawback of Typst at the moment is that figures can only be in SVG and/or PNG... If you use PDF figures in your everyday life (like me), you'll need to convert them to SVG (if you drag a PDF figure to the web-application it automatically convert it).
+
+There is also a new package to use PDF directly (https://github.com/frozolotl/muchpdf) but I don't know its status.
+
+* [IPE](http://ipe.otfried.org/) (cross-platform; integrates LaTeX text; great for triangulation and geometric stuff)
 * Adobe Illustrator (nice, but €€€)
 * [Inkscape](https://inkscape.org/en/) (cross-platform)
-* [IPE](http://ipe.otfried.org/) (cross-platform; integrates LaTeX text; great for triangulation and geometric stuff)
 
 ### Drawing flowcharts
 
