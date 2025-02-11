@@ -15,9 +15,9 @@ But we hope it will encourage everyone to use Typst or LaTeX for writing their t
 ## What is Typst?
 
 It's the "new LaTeX": simpler to learn, simpler to modify the layout, 9423.6X faster.
-But also, at the moment, has less features, can be a bit buggy, the basecode changes often (which can break some functions), etc. 
+But also, at the moment, has fewer features, can be a bit buggy, the base code changes often (which can break some functions), etc. 
 
-So great to use, but be warned.
+So great to use, but be warned a bit...
 
 
 ## How to use this template?
@@ -39,11 +39,11 @@ If you're used to LaTeX, see the handy [Guide for LaTeX users](https://typst.app
 If you want to work locally, then we strongly encourage you to use:
 
 * [VSCode](https://code.visualstudio.com/)
-* with the [Tinymist extension](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) (which offers realt-ime preview/rendering)
+* with the [Tinymist extension](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) (which offers real-time preview/rendering)
 
 ![](./figs/vscode.png)
 
-The web-application is free, the rending in realtime works great, and it has collaboration tools integrated. The only potential drawback is that not all fonts are present
+The web-application is free, the rending in real-time works great, and it has collaboration tools integrated. The only potential drawback is that not all fonts are present
 
 * [Typst.app](https://typst.app/) 
 
@@ -57,7 +57,7 @@ BibTeX can be used, this is a good cross-platform one:
 
 ### Drawing figures
 
-The main drawback of Typst at the moment is that figures can only be in SVG and/or PNG... If you use PDF figures in your everyday life (like me), you'll need to convert them to SVG (if you drag a PDF figure to the web-application it automatically convert it).
+The main drawback of Typst at the moment is that figures can only be in SVG and/or PNG... If you use PDF figures in your everyday life (like me), you'll need to convert them to SVG (if you drag a PDF figure to the web-application it automatically converts it).
 
 There is also a new package to use PDF directly (https://github.com/frozolotl/muchpdf) but I don't know its status.
 
