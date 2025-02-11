@@ -58,6 +58,8 @@
   target: figure.where(kind: "algorithm"),
 )
 
+#outline(title: "TODOs", target: figure.where(kind: "todo"))
+
 // page counter anchor
 #metadata(()) <front-matter>
 #pagebreak()

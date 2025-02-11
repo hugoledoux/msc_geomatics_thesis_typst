@@ -220,4 +220,4 @@ The package #link("https://typst.app/universe/package/dashy-todo/") is perfect f
 
 A summary of all TODOs in the thesis can even be generated:
 
-#outline(title: "TODOs", target: figure.where(kind: "todo"))
+
