@@ -12,6 +12,10 @@
 #import "@preview/hydra:0.5.1": hydra
 //-- TODO
 #import "@preview/dashy-todo:0.0.1": todo
+//-- PDF figures
+#import "@preview/muchpdf:0.1.0": muchpdf
+
+
 
 //-- natbib
 #let citet= cite.with(form: "prose") 

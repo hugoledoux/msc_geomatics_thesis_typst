@@ -57,10 +57,6 @@ BibTeX can be used, this is a good cross-platform one:
 
 ### Drawing figures
 
-The main drawback of Typst at the moment is that figures can only be in SVG and/or PNG... If you use PDF figures in your everyday life (like me), you'll need to convert them to SVG (if you drag a PDF figure to the web-application it automatically converts it).
-
-There is also a new package to use PDF directly (https://github.com/frozolotl/muchpdf) but I don't know its status.
-
 * [IPE](http://ipe.otfried.org/) (cross-platform; integrates LaTeX text; great for triangulation and geometric stuff)
 * Adobe Illustrator (nice, but €€€)
 * [Inkscape](https://inkscape.org/en/) (cross-platform)

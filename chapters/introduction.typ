@@ -25,25 +25,19 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 
 == Figures <sec:figures>
 
-#info[Typst---very annoyingly!---does not support figures in PDF, only PNG and SVG. You need to convert your PDF to SVG, you can use that: #link("https://cloudconvert.com/pdf-to-svg")]
+#warning[
+  At the moment (v0.13 of Typst), Typst supports natively figures in PNG, SVG, JPG, and GIF (with `#image()`).
+
+  With the package #link("https://github.com/frozolotl/muchpdf"), you can also insert directly PDF files, there is an example below.
+]
 
 @fig:sometriangles is a simple figure in PNG format, notice the use of `placement: auto` to put the figure at the best place possible (top or bottom, Typst decides for you).
 
 #figure(
-  image("../figs/sometriangles.png", width:60%),
-  // rect(),
+  image("../figs/sometriangles.png", width:50%),
   placement: auto, //-- otherwise figures gets placed where it's called
   caption: flex-caption( [1 nice figure.], [Two nice figure.]),
 ) <fig:sometriangles>
-
-#figure(
-  rect(),
-  placement: auto,
-  caption: flex-caption(
-    [This is short.],
-    [This is my long caption text in the document.],
-  ), 
-) <un>
 
 #info[All figures in your thesis should be referenced to in the main text. The same applies to tables and algorithms.]
 
@@ -51,22 +45,31 @@ As shown in @fig:cat, it is possible to have two figures (or more) side by side.
 You can also refer to a _subfigure_: see @fig:cat:b.
 #subpar-grid(
   figure(
-    image("../figs/tricat-1.svg"), 
+    muchpdf(
+      read("../figs/tricat.pdf", encoding: none),
+      pages: 0,
+    ),
     caption: [],
   ), <fig:cat:a>,
   figure(
-    image("../figs/tricat-2.svg"), 
+    muchpdf(
+      read("../figs/tricat.pdf", encoding: none),
+      pages: 1,
+    ), 
     caption: [],
   ), <fig:cat:b>,
   figure(
-    image("../figs/tricat-3.svg"), 
+    muchpdf(
+      read("../figs/tricat.pdf", encoding: none),
+      pages: 2,
+    ), 
     caption: [],
   ), <fig:cat:c>,
   columns: (1fr, 1fr, 1fr),
   caption: 
   flex-caption(
     [Triangulation of a cat.],
-    [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours.], 
+    [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours. Notice that the figure is one PDF file with 3 pages, the page to display can be chosen.], 
   ),
   placement: auto,
   label: <fig:cat>,
