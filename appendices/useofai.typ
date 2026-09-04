@@ -7,6 +7,3 @@ Include the following details:
 2. *How:* Briefly describe how you used these tools (eg generating outlines, writing, coding, data analysis, editing, etc.).
 3. *Extent:* Indicate the extent of their use (eg occasional assistance, regular drafting, checking grammar, etc.).
 4. *Ethics:* Confirm adherence to academic integrity and that AI/LLM did not generate falsified, fictional, or plagiarized content.
-
-*Example statement:*
-#quote[Some parts of this thesis benefited from the use of AI tools such as ChatGPT for initial text drafts and grammar suggestions. All results, analyses, and conclusions are my own, and I verified that the content is original and meets academic integrity standards.]
