@@ -10,6 +10,7 @@
   supervisor2: mysettings.supervisor2,
   coreader   : mysettings.coreader,
   graduation-group: mysettings.graduation-group,
+  // cover: true,  
   doc,
 )
 
