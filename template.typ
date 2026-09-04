@@ -147,7 +147,7 @@
   show raw: set text(font: mono-font)
 
     // Set link style
-  show link: it => text(fill: rgb("#3087b3") , it)
+  show link: it => text(fill: rgb("#3087b3"), font: mono-font , it)
 
   set list(indent: 1em)
   set enum(indent: 1em)
