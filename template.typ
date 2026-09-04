@@ -11,7 +11,7 @@
 //-- for the fancy headers
 #import "@preview/hydra:0.6.1": hydra
 //-- for the to-be-done things
-#import "@preview/dashy-todo:0.1.2": todo
+#import "@preview/dashy-todo:0.1.3": todo
 
 
 
@@ -67,9 +67,12 @@
   set par(justify: true)
 
 
-  let serif-fonts = ("TeX Gyre Pagella", "Palatino", "New Computer Modern") //-- https://www.1001fonts.com/tex-gyre-pagella-font.html
-  let sans-fonts = ("TeX Gyre Heros", "Source Sans Pro", "Calibri")  //-- https://www.1001fonts.com/texgyreheros-font.html + https://github.com/adobe-fonts/source-sans-pro
-  let math-font = ("Stix Two Math", "New Computer Modern Math")     //-- free: https://github.com/stipub/stixfonts
+  let serif-fonts = ("TeX Gyre Pagella", "Palatino", "New Computer Modern") 
+  //-- free download: https://www.1001fonts.com/tex-gyre-pagella-font.html
+  let sans-fonts = ("TeX Gyre Heros", "Source Sans Pro", "Calibri")  
+  //-- free download: https://www.1001fonts.com/texgyreheros-font.html + https://github.com/adobe-fonts/source-sans-pro
+  let math-font = ("Stix Two Math", "New Computer Modern Math")     
+  //-- free download: https://github.com/stipub/stixfonts
   let mono-font = ("Consolas")
 
 
@@ -85,9 +88,6 @@
 
   //-- math
   show math.equation: set text(font: math-font)
-  /// author: laurmaedje
-  // set heading(numbering: "1.")
-  // reset counter at each chapter
   show heading.where(level:1): it => {
     counter(math.equation).update(0)
     it

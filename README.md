@@ -43,7 +43,7 @@ If you want to work locally, then we strongly encourage you to use:
 ![](./figs/vscode.png)
 
 Alternatively, use your favourite text editor and in a shell `typst watch main.typ`, this will automatically recompile `main.pdf` on changes (this is faster than compiling from scratch each time because Typst has incremental compilation).
-You need to use a PDF viewer that supports this (Adobe does not), for macOS [Skim](https://skim-app.sourceforge.io/) is great.
+You need to use a PDF viewer that supports this (Adobe does not), for macOS [Skim](https://skim-app.sourceforge.io/) is great, for Windows I have no idea (find one and make a PR to change this sentence).
 
 
 ### Web-application

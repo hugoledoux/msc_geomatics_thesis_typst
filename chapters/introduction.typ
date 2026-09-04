@@ -18,15 +18,14 @@ If you run into mistakes/problems/issues, please report them on the GitHub page,
 == Cross-references <sec:cross-ref>
 
 @chap:intro[Chapter] is to refer to the Chapter, but all other sections you can just use @sec:figures or @sec:cross-ref.
-// The next chapter (\nameref{chap:rw}), is on page~\pageref{chap:rw}.
 
-For a figure, you can also just use @fig:cat, but I guess you can qualify it with whatever you fancy, eg @fig:cat[Hugo].
+For a figure, you can also just use @fig:cat, but I guess you can qualify it with whatever you fancy, eg @fig:cat[Potato].
 
 
 == Figures <sec:figures>
 
 #info[
-  At the moment (v0.14 of Typst), Typst supports natively figures in PDF, PNG, SVG, JPG, and GIF (with `#image()`).
+  Typst supports natively figures in PDF, PNG, SVG, JPG, and GIF (with `#image()`).
 ]
 
 @fig:sometriangles is a simple figure in PNG format, notice the use of `placement: auto` to put the figure at the best place possible (top or bottom, Typst decides for you).
@@ -34,7 +33,7 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 #figure(
   image("../figs/sometriangles.png", width:50%),
   placement: auto, //-- otherwise figures gets placed where it's called
-  caption: flex-caption( [1 nice figure.], [Two nice figure.]),
+  caption: "One nice figure.",
 ) <fig:sometriangles>
 
 #info[All figures in your thesis should be referenced to in the main text. The same applies to tables and algorithms.]
@@ -227,7 +226,7 @@ caption: [Some GML for a `gml:Solid`.],
 
 == TODOs
 
-At A3 or for earlier drafts, it might be good to let the readers know that some part need more work.
+At the Green-light assessment or for earlier drafts, it might be good to let the readers know that some part need more work.
 Or that a figure will be added.
 
 The package #link("https://typst.app/universe/package/dashy-todo/") is perfect for this.

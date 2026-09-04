@@ -92,7 +92,8 @@
 //-- back-matter
 // must take page breaks into account, may need to be offset by +1 or -1
 // #context counter(page).update(counter(page).at(<front-matter>).first())
-#set heading(numbering: "A.1")
+// #set heading(numbering: "A.1")
+#set heading(numbering: "A.1.", supplement: [Appendix])
 #counter(heading).update(0)
 #let sub-figure-numbering = (super, sub) => numbering("A.1a", counter(heading).get().first(), super, sub)
 #let figure-numbering = super => numbering("A.1", counter(heading).get().first(), super)
