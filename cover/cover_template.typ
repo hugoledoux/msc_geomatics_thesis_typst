@@ -1,6 +1,6 @@
 #import "@preview/ccicons:1.0.1": *
 
-#let cover(
+#let mycover(
   title: "",
   author: "",
   graduation-year: 2024,
@@ -21,7 +21,7 @@
   
 
   align(center + horizon)[
-    #strong(text(1.2em)[MSc thesis in Geomatics])
+    #strong(text(1.2em)[MSc thesis in Geomatics for the Built Environment])
     #v(5em, weak: true)
     #text(font: sans-fonts, 2em, weight: 600, title)
     #v(3em, weak: true)
@@ -29,7 +29,7 @@
     #v(2em, weak: true)
     #text(1.4em, [#graduation-month #graduation-year])
     #v(15em, weak: true)
-    #text(font: sans-fonts, 1.2em, weight: 400, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics])
+    #text(font: sans-fonts, 1.2em, weight: 400, [A thesis submitted to the Delft University of Technology in partial fulfillment of the requirements for the degree of Master of Science in Geomatics for the Built Environment])
   ]
 
   pagebreak()
