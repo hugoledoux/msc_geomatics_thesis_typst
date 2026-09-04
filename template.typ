@@ -57,9 +57,28 @@
   supervisor2: "",
   coreader   : "",
   graduation-group: "",
+  cover: false,
   body,
 ) = {
 
+  if cover == true {
+    page(
+      width: 210mm,
+      height: 297mm,
+      margin: 0pt,
+    )[
+      #image(
+        "./cover/cover_front.pdf",
+        page: 1,
+        width: 100%,
+        height: 100%,
+        fit: "contain",
+      )
+    ]
+    pagebreak()
+    pagebreak()
+  }
+  
   set page(
     margin: auto,
     // margin: (left: 25mm, right: 25mm, top: 40mm, bottom: 30mm),
@@ -125,7 +144,7 @@
 
 
   //-- cover pages
-  cover(
+  mycover(
     title: title,
     author: author,
     graduation-year: graduation-year,
@@ -142,10 +161,31 @@
 
   pagebreak()
 
+  pagebreak(to: "odd")
   align(bottom)[
     This document was typeset using #link("https://typst.app")[Typst], and uses the template freely available at https://github.com/tudelft3d/msc_geomatics_thesis_typst.
     // The main font is Palatino.
     // The figures and diagrams were mostly drawn using IPE, PGF/Ti\emph{k}z and Omnigraffle.
   ]
+  
+  if cover == true {
+    //-- make sure the back cover ends up on a left (even) page
+    set page(numbering: none)
+    pagebreak(to: "even")
+    page(
+      width: 210mm,
+      height: 297mm,
+      margin: 0pt,
+    )[
+      #image(
+        "./cover/cover_back.pdf",
+        page: 1,
+        width: 100%,
+        height: 100%,
+        fit: "contain",
+      )
+    ]
+  }
+
 
 }
