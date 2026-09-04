@@ -1,7 +1,5 @@
-
 //-- my local cover
-#import "cover/cover_template.typ": cover
-
+#import "cover/cover_template.typ": mycover
 //-- subfigure
 #import "@preview/subpar:0.2.2"
 //-- admonitions
@@ -9,9 +7,11 @@
 //-- pseudo-code
 #import "@preview/lovelace:0.3.0": *
 //-- for the fancy headers
-#import "@preview/hydra:0.6.1": hydra
+#import "@preview/hydra:0.6.2": hydra
 //-- for the to-be-done things
 #import "@preview/dashy-todo:0.1.3": todo
+//-- siunitx
+#import "@preview/unify:0.8.1": num, numrange, qty, qtyrange, unit
 
 
 
@@ -31,14 +31,28 @@
   if in-outline.at(here()) { long } else { short }
 }
 
-
 //-- https://github.com/tingerrr/subpar/issues/16
 #let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
 #let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
-#let subpar-grid = subpar.grid.with(
+//-- 9pt captions with a bold "Figure 1.1:"-style label
+#let styled-caption(cap) = context text(size: 9pt)[
+  #strong(cap.supplement + sym.space + cap.counter.display(cap.numbering) + [:])
+  #h(0.3em)
+  #cap.body
+]
+#let subfigure = subpar.grid.with(
   numbering: figure-numbering,
   numbering-sub-ref: sub-figure-numbering,
+  //-- simple "(a)", "(b)", ... labels below the sub-figures
+  show-sub-caption: (num, caption) => text(size: 8pt, weight: "regular")[#num #h(0.3em) #caption.body],
 )
+// //-- https://github.com/tingerrr/subpar/issues/16
+// #let sub-figure-numbering = (super, sub) => numbering("1.1a", counter(heading).get().first(), super, sub)
+// #let figure-numbering = super => numbering("1.1", counter(heading).get().first(), super)
+// #let subpar-grid = subpar.grid.with(
+//   numbering: figure-numbering,
+//   numbering-sub-ref: sub-figure-numbering,
+// )
 
 //-- default for pseudo-code/lovelace
 #let my-lovelace-defaults = (
@@ -100,10 +114,23 @@
     size: 11pt,
   )
   show heading: set text(font: sans-fonts)
-  show heading.where(level: 1): it => counter(figure.where(kind: image)).update(0) + it
+  show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: "algorithm")).update(0)
+    it
+  }
+  show heading.where(level: 1): set heading(supplement: [Chapter])
   show heading.where(level:1): it => text(font: sans-fonts, 1.5em, it) + v(2em)
   show heading.where(level: 1): it => pagebreak(weak: true, to: "odd") + it
   show figure.where(kind: image): set figure(numbering: figure-numbering)
+  show figure.where(kind: table): set figure(numbering: figure-numbering)
+  show figure.where(kind: "algorithm"): set figure(numbering: figure-numbering)
+  //-- captions of figures, tables and algorithms: 9pt with a bold label
+  //-- (kept global so that subpar's sub-captions keep their own styling)
+  show figure.caption: cap => {
+    if cap.kind in (image, table, "algorithm") { styled-caption(cap) } else { cap }
+  }
 
   //-- math
   show math.equation: set text(font: math-font)

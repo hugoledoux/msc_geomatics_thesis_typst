@@ -1,4 +1,4 @@
-= Reproducibility self-assessment
+= Reproducibility self-assessment <app:reproducibility>
 
 To promote open science and research integrity, please include a statement about the reproducibility of your MSc thesis work. 
 

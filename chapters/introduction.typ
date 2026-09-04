@@ -2,13 +2,14 @@
 
 = Introduction <chap:intro>
 
+#info[It is not an official template and it is not mandatory to use it.]
+
 This is a complete template for the MSc Geomatics thesis.
 It contains all the parts that are required and is structured in such a way that most/all supervisors expect.
 Observe that the MSc Geomatics at TU Delft has no formal requirements, how the document looks like (fonts, margins, headers, etc) is entirely up to you. 
 
 We basically took the template LaTeX at #link("https://github.com/tudelft3d/msc_geomatics_thesis_template") and tried to convert it to Typst.
 
-#info[It is not an official template and it is not mandatory to use it.]
 
 But we hope it will encourage everyone to use Typst for writing their thesis, and we also hope that it will _discourage_ some from using Word.
 
@@ -17,7 +18,8 @@ If you run into mistakes/problems/issues, please report them on the GitHub page,
 
 == Cross-references <sec:cross-ref>
 
-@chap:intro[Chapter] is to refer to the Chapter, but all other sections you can just use @sec:figures or @sec:cross-ref.
+To refer to chapters and sections, use the label, eg @chap:intro, @sec:figures or @sec:cross-ref.
+For an appendix, use @app:reproducibility[Appendix].
 
 For a figure, you can also just use @fig:cat, but I guess you can qualify it with whatever you fancy, eg @fig:cat[Potato].
 
@@ -40,25 +42,21 @@ For a figure, you can also just use @fig:cat, but I guess you can qualify it wit
 
 As shown in @fig:cat, it is possible to have two figures (or more) side by side.
 You can also refer to a _subfigure_: see @fig:cat:b.
-#subpar-grid(
+#subfigure(
   figure(
     image("../figs/tricat.pdf", page: 1),
-    caption: [],
+    caption: [You can put sub-captions this way],
   ), <fig:cat:a>,
   figure(
     image("../figs/tricat.pdf", page: 2), 
-    caption: [],
+    caption: [], //-- an empty caption puts the (a), (b), (c)...
   ), <fig:cat:b>,
   figure(
     image("../figs/tricat.pdf", page: 3), 
     caption: [],
   ), <fig:cat:c>,
   columns: (1fr, 1fr, 1fr),
-  caption: 
-  flex-caption(
-    [Triangulation of a cat.],
-    [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours. Notice that the figure is one PDF file with 3 pages, the page to display can be chosen.], 
-  ),
+  caption: [Three figures side-by-side. *(a)* A cat formed of 2 polygons. *(b)* its triangulation. *(c)* with some colours. Notice that the figure is one PDF file with 3 pages, the page to display can be chosen.],
   placement: auto,
   label: <fig:cat>,
 )
@@ -94,6 +92,7 @@ For example, for a paper:
 Notice that if you use the field `doi` you shouldn't append `http://doi.org/` (the full DOI being http://doi.org/10.1142/8685).
 If you do this then you'll have clickable DOIs in your list of references. 
 
+#warning[Having clickable DOIs in the list of references is mandatory!]
 
 == Footnotes 
 
@@ -134,15 +133,19 @@ An example of a simple table is in @tab:example1.
     [*engelen*], [1~629], [15~870], [23~732], [15~868], 
     table.hline(),
   ) 
-)<tab:example1>
+) <tab:example1>
 
 ❤️ You can even read directly from a CSV file this way:
 
 #let data = csv("../data/smth.csv")
-#table(
-  columns: 3,
-  ..data.flatten(),
-)
+#figure(
+  table(
+    columns: 3,
+    ..data.flatten(),
+  ),
+  placement: auto,
+  caption: [Some CSV random data.],
+) <tab:example2>
 
 == Plots
 

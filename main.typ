@@ -98,6 +98,8 @@
 #let sub-figure-numbering = (super, sub) => numbering("A.1a", counter(heading).get().first(), super, sub)
 #let figure-numbering = super => numbering("A.1", counter(heading).get().first(), super)
 #show figure.where(kind: image): set figure(numbering: figure-numbering)
+#show figure.where(kind: table): set figure(numbering: figure-numbering)
+#show figure.where(kind: "algorithm"): set figure(numbering: figure-numbering)
 
 #include "appendices/useofai.typ"
 #include "appendices/reproducibility.typ"
